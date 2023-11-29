@@ -34,10 +34,12 @@ def alarme(alarme):
 def pause(heure_pause):
     if mode == str("24h"):
         if (hh , mm , ss) == heure_pause:
+            print("pause !")
             while True:
                 time.sleep(2)
     elif mode == str("12h"):
         if (hh , mm , ss) == heure_pause:
+            print("pause !")
             while True:
                 time.sleep(2)
         
