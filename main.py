@@ -25,24 +25,26 @@ def afficher_heure_12pm(heure):
     ss=heure[2]
     print(f"{heure[0]-12:02d}:{heure[1]:02d}:{heure[2]:02d} PM")    
 
-
+#creation de la fonction qui mettra une alarme
 def alarme(alarme):
     if (hh , mm , ss) == alarme:
         print("l'alarme sonne !")
     return alarme
-
+#creation de la fonction qui fera une pause de l'horloge
 def pause(heure_pause):
     if mode == str("24h"):
         if (hh , mm , ss) == heure_pause:
-            print("pause !")
+            print("Pause !")
             while True:
                 time.sleep(2)
     elif mode == str("12h"):
         if (hh , mm , ss) == heure_pause:
-            print("pause !")
+            print("Pause !")
             while True:
                 time.sleep(2)
-        
+#creation de la boucle horloge qui rajoutera +1 a la variable des seconde , +1 a minute lorsque les seconde auront atteint 60
+# et +1 a heure lorsque les minutes auront atteint 60. lorsque seconde et heure atteingnent 60 , ca se met a 0 
+# et quand heure atteint 24 heure se remet a 0        
 hh , mm ,ss =heure_initiale
 if mode == str("24h"):
     while True:
@@ -58,7 +60,7 @@ if mode == str("24h"):
         afficher_heure_24((hh,mm,ss))
         alarme(heure_alarme)
         pause(heure_pause)
-        time.sleep(1)
+        time.sleep(1)#commande qui sert a freeze une boucle pdt une seconde .
 elif mode == str("12h"):   
     if hh < 13:
         while True:
